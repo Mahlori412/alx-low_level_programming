@@ -1,19 +1,18 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
-/**
+/*
  *
- *  * main - main function
+ * main - main function
  *
- *  * No Description:
+ * No Description:
  *
- *  * Return: 0
- *
- *  */
+ * Return: 0
+ */
+ 
 int main(void)
 {
 
