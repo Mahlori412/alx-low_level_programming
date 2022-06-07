@@ -9,8 +9,14 @@
 int main(void)
 {
 	char c;
+	int i = 0;
+	char s[] = "test\n"
 
-	_putchar(c);
-
+	while (i <= 9)
+	{
+		c = s[i];
+		_putchar(c);
+		i++;
+	}
 	return 0;
 }
