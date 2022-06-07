@@ -1,22 +1,16 @@
-#include "stdio.h"
 #include "main.h"
 
 /**
- * main - main function .
- * Return: 0
+ * main - entry point
+ * 
+ * Return0
  */
 
 int main(void)
 {
-	char m[] = "Main";
-	int s = sizeof(m);
-	int i;
+	char c;
 
-	for (i = 0; i < s; i++)
-	{
-		_putchar(m[i]);
-	}
+	_putchar(c);
 
-	_putchar('\n');
-	return (0);
+	return 0;
 }
