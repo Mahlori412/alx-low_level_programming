@@ -5,10 +5,13 @@
  * 
  * Return0
  */
-
-int main(void)
+int _putchar(char)
 {
-	
+	return (write(1, &c, 1))
+}
+int main()
+{
+
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
