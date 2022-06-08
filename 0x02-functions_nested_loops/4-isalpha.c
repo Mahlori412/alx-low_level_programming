@@ -1,8 +1,12 @@
 include "main.h"
+
 /**
-* Return: 1 if character is letter, lowercase or uppercase, 0 otherwise.
-*
-*  */
+ * _isalpha - checks for alphabetic characters
+ *@c: character to check
+ *
+ * Return: 1 or 0
+ */
+
 int _isalpha(int c)
 {
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))

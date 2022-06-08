@@ -1,10 +1,12 @@
 include "main.h"
 
 /**
- * main - check the code.
+ * _islower - checks for lowercase letters
+ * @c: character to check
  *
- * Return: 1 if character is lowercase, 0 otherwise.
+ * Return: 1 or 0
  */
+
 int _islower(int c)
 {
 if (c >= 'a' && c <= 'z')
