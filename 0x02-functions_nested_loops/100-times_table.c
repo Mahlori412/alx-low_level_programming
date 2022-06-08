@@ -1,4 +1,11 @@
-include "main.h"
+#include "main.h"
+
+/**
+ * print_times_table - prints the times table up to the integer input
+ * @n: integer input
+ *
+ * Return: void
+ */
 
 void print_times_table(int n)
 {
@@ -17,9 +24,13 @@ _putchar(' ');
 prod = num * mult;
 
 if (prod <= 99)
-{ _putchar(' ');}
+{ 
+_putchar(' ');
+}
 if (prod <= 9)
-{_putchar(' ');}
+{
+_putchar(' ');
+}
 if (prod >= 100)
 {
 _putchar((prod / 100) + '0');
