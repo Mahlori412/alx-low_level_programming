@@ -1,9 +1,10 @@
-include "main.h"
+#include "main.h"
 
 /**
- * main - check the code.
+ * print_last_digit - prints last digit of integer input
+ *@n: integer to modify
  *
- * Return: Value of the last digit.
+ * Return: 1
  */
 int print_last_digit(int n)
 {

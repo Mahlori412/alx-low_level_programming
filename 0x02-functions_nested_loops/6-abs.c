@@ -1,9 +1,10 @@
-include "main.h"
+#include "main.h"
 
 /**
- * main - check the code.
+ * _abs - outputs absolut value of integer input
+ * @n: integer to check
  *
- * Return: The absolute value of the integer.
+ * Return: n
  */
 int _abs(int n)
 
