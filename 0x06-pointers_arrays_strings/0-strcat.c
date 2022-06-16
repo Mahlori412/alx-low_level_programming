@@ -10,20 +10,25 @@
 
 char *_strcat(char *dest, char *src)
 {
-int i, j;
+char *dest_end = dest;
+int src_len = 0;
 
-i = j = 0;
-
-while (*(dest + i))
+while (*dest_end)
 {
-i++
-}
-while ((*(dest + i) = *(src + j)))
-{
-i++;
-j++;
+++dest_end;
 }
 
+while (src[src_len])
+{
+++src_len;
+}
+
+if (src + src_len < dest || dest_end + src_len < src)
+{
+do {
+*dest_end++ = *src++;
+}
+while (src_len--);
+}
 return (dest);
-
 }
