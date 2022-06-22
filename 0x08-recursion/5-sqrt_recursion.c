@@ -1,25 +1,40 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
- * square_root - find the natural square root
- * @i: number
- * @j: incrementor
+ * do_sqrt_recursion - needs the extra parameter r to work
+ * @n: the natural number whose root to find
+ * @r: the root iterator
  *
- * Return: the number found
+ * Return: the natural root of n or -1 if not found
  */
 
-int square_root(int i, int j)
+int do_sqrt_recursion(int n, int r)
 {
-if (i * i == j)
+if (r * r == n)
 {
-return (i);
+return (r);
 }
-else if (i * i > j)
+else if (r * r > n)
 {
 return (-1);
 }
-else
-{
-return (square_root(i + 1, j));
+return (do_sqrt_recursion(n, r + 1));
 }
+
+/**
+ *
+ * _sqrt_recursion - returns the square root of x
+ * @n: the number to root
+ *
+ * Return: the integer result, -1 on error
+ */
+
+int _sqrt_recursion(int n)
+{
+if (n < 0)
+{
+return (-1);
+}
+return (do_sqrt_recursion(n, 0));
 }

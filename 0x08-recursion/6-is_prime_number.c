@@ -1,29 +1,45 @@
 #include "main.h"
+#include <stddef.h>
+
+
 
 /**
- * prime_found - found prime number
- * @i: dividend
- * @j: divider
+ * do_is_prime_number - recursively determine if n > 2 is prime
+ * @n: the number to determine primality
+ * @m: the recursive iterator searching for success value
  *
- * Return: return 1 if the input integer is prime number, otherwise 0
+ * Return: 1 if prime, 0 if composite
  */
 
-int prime_found(int i, int j)
+int do_is_prime_number(int n, int m)
 {
-if (j != 1)
-{
-if (i == j)
+if (m >= n / 2)
 {
 return (1);
 }
-else if (j % i == 0 || j <= 1)
+if (n % m)
+{
+return (do_is_prime_number(n, m + 2));
+}
+return (0);
+}
+
+/**
+ * is_prime_number - determines if a number is prime
+ * @n: the number to check
+ *
+ * Return: 1 is prime, 0 if composite
+ */
+
+int is_prime_number(int n)
+{
+if (n == 2)
+{
+return (1);
+}
+if (n < 2 || !(n % 2))
 {
 return (0);
 }
-else
-{
-return (prime_found(i + 1, j));
-}
-}
-return (0);
+return (do_is_prime_number(n, 3));
 }
