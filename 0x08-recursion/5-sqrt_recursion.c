@@ -23,7 +23,6 @@ return (do_sqrt_recursion(n, r + 1));
 }
 
 /**
- *
  * _sqrt_recursion - returns the square root of x
  * @n: the number to root
  *
