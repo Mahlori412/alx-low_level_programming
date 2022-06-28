@@ -1,89 +1,50 @@
 #include "main.h"
 #include <stdlib.h>
 
-
-
 /**
- * _strlen - give the length of a string
- * @s: the string
+ * str_concat - Concatenates two strings.
+ * @s1: The string to be concatenated upon
+ * @s2: The string to be concatenated to s1.
  *
- * Return: the length of a string
- */
-
-int _strlen(char *s)
-{
-int i;
-for (i = 0 ; s[i] != '\0' ; i++);
-return (i);
-}
-
-/**
- * _strcat - concatenates two strings
- * @dest: input parameter string
- * @src: input parameter string
- *
- * Return: dest
- */
-
-char *_strcat(char *dest, char *src)
-{
-int a;
-int b;
-a = 0;
-
-while (dest[a] != 0)
-{
-a++;
-}
-b = 0;
-
-while (src[b] != 0)
-{
-dest[a] = src[b];
-a++;
-b++;
-}
-return (dest);
-}
-/**
- * str_concat - concatenate to strings
- * @s1: the string to print
- * @s2: the string to print
- *
- * Return: pointer that contains the content of s1 followed by s2
+ * Return: If concatenation fails - NULL.
+ * Otherwise - a pointer the newly-allocated space in memory
+ * containing the concatenated string
  */
 
 char *str_concat(char *s1, char *s2)
 {
-int length;
-char *space;
+char *concat_str;
+int index, concat_index = 0, len = 0;
 
-if (s1 == '\0')
+if (s1 == NULL)
 {
 s1 = "";
 }
-if (s2 == '\0')
+
+if (s2 == NULL)
 {
 s2 = "";
 }
-length = _strlen(s1) + _strlen(s2);
-if (s1 != '\0' && s2 != '\0')
+
+for (index = 0; s1[index] || s2[index]; index++)
 {
-space = malloc(sizeof(char) * length + 1);
-if (space == '\0')
+len++;
+}
+concat_str = malloc(sizeof(char) * len);
+
+if (concat_str == NULL)
 {
-return ('\0');
+return (NULL);
 }
-else
+
+for (index = 0; s1[index]; index++)
 {
-space = _strcat(space, s1);
-space = _strcat(space, s2);
+concat_str[concat_index++] = s1[index];
 }
-}
-else
+
+for (index = 0; s2[index]; index++)
 {
-space = "";
+concat_str[concat_index++] = s2[index];
 }
-return (space);
-free(space);
+return (concat_str);
 }
